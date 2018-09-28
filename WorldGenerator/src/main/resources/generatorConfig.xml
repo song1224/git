@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+	<context id="mysql2Tables" targetRuntime="MyBatis3">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/taotao" userId="root"
+			password="root">
+		</jdbcConnection>
+
+		<!-- <jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.31.188:1521/orcl" 
+			userId="scott" password="tiger"> </jdbcConnection> -->
+
+		<!-- <javaTypeResolver > <property name="forceBigDecimals" value="false" 
+			/> </javaTypeResolver> -->
+		<!-- -->
+		<javaModelGenerator targetPackage="com.taotao.pojo"
+			targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<!-- -->
+		<sqlMapGenerator targetPackage="com.taotao.mapper"
+			targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!-- -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.taotao.mapper" targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!-- mysql 的 schema默認等於庫 -->
+		
+		<table schema="" tableName="tb_content"></table>
+		<table schema="" tableName="tb_content_category"></table>
+		<table schema="" tableName="tb_item"></table>
+		<table schema="" tableName="tb_item_cat"></table>
+		<table schema="" tableName="tb_item_desc"></table>
+		<table schema="" tableName="tb_item_param"></table>
+		<table schema="" tableName="tb_item_param_item"></table>
+		<table schema="" tableName="tb_order"></table>
+		<table schema="" tableName="tb_order_item"></table>
+		<table schema="" tableName="tb_order_shipping"></table>
+		<table schema="" tableName="tb_user"></table>
+		
+		
+		
+		<!-- <table tableName="dept_manager" domainObjectName="DeptManager">类名
+		</table>
+		<table tableName="employees" domainObjectName="Employee"></table>
+
+		<table tableName="departments" domainObjectName="Departments"></table>
+ -->
+		
+		
+	<!-- <table tableName="user_info" domainObjectName="UserInfo">类名 </table> -->
+
+		<!-- <table schema="world" tableName="city" domainObjectName="city" >类名</table> 
+			<table schema="world" tableName="countrylanguage" domainObjectName="countrylanguage" 
+			>类名</table> -->
+
+	</context>
+</generatorConfiguration>
